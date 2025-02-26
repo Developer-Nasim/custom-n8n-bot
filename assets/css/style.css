@@ -108,152 +108,228 @@ li {
 ================================== */
  
 
-
-.header-area {
-  padding: 30px 0; 
-  width: 100%;
-  z-index: 99;
-  background: #ff7c47;
-}
-.menu-area nav ul li {
-  list-style: none;
-  display: inline-block;
-}
-
-.menu-area nav ul li a {
-  font-size: 16px;
-  color: #000; 
-  display: inline-block;
-  margin-left: 60px;
-  position: relative;
-}
-.menu-area nav ul li a.theme-btn {
-  background: white;
-  display: inline-block;
-  padding: 0 50px;
-  height: 48px;
-  color: #ff4900;
-  line-height: 48px;
-  border-radius: 30px;
-  border: 2px solid white;
-  transition: .3s;
-}  
-/* humbergar */
-.bar a {
-  width: 35px;
-  height: 35px;
-  float: right;
-  position: relative;
-} 
-.bar a span {
-  width: 100%;
-  height: 3px;
-  background: #fff;
-  display: block;
-  position: relative;
-  top: 17px;
-  border-radius: 30px;
-  transition: .3s;
-} 
-.bar a span:before {left: 0;content: "";position: absolute;width: 100%;height: 100%;background: #fff;bottom: 10px;border-radius: 30px;transition: .3s;} 
-.bar a span:after {left: 0;content: "";position: absolute;width: 100%;height: 100%;background: #fff;bottom: -10px;border-radius: 30px;transition: .3s;}
- 
-/* humbarger END */
  
 
-/* mobile-menu START */
-.mobile-menu {
-  position: fixed;
-  width: 320px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.chatBar {
+  background: linear-gradient(45deg, rgb(112, 190, 250), white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
-  background: #ffffff;
-  z-index: 99;
-  box-shadow: 0px 0px 9px -1px #737373;
-  top: 0;
-  right: 0;
-  transition: .3s;
-  margin-right: -400px;
-  padding: 30px;
-  z-index: 999;
+  width: 100%;
+  /* min-height: max-content; */
+  padding: 100px;
 }
-.siteBar{
-  margin-right: 0; 
+textarea::-webkit-scrollbar {
+  width: 0;
 }
-.menu_overlay {
-  display: block;
+.chatBody h3 {
+  font-size: 28px;
+  color: #0a0a0a;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.chatInput {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 700px;
+}
+
+.chatInput textarea {
+  width: 100%;
+  border: 1px solid rgb(112 190 250 / 26%);
+  /* background: transparent; */
+  border-radius: 8px;
+  padding: 10px;
+  /*color: #fff;
+  */height: 45px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.chatInput button {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  background: linear-gradient(45deg, rgb(112, 190, 250), white);
+  max-width: 36px;
+  border-radius: 4px;
+  padding: 5px;
+  transform: translateY(-50%);
+}
+.chatBody {
+  background: #ffffff40;
+  padding: 100px 80px;
+  border-radius: 20px;
+}
+.overlay {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  background: #0a0a0a;
+  top: 0;
+  left: 0;
   z-index: 99;
-  background: #000;
+  transition: .2s;
+  opacity: 0;
+  visibility: hidden;
+}
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  height: 517px;
+  z-index: 99999;
+  background: linear-gradient(45deg, rgb(112, 190, 250), white);
+  border: 1px solid rgb(112, 190, 250);
+  display: block;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  border-radius: 10px;
   opacity: 0;
   visibility: hidden;
   transition: .2s;
+  -webkit-transition: .2s;
+  -moz-transition: .2s;
+  -ms-transition: .2s;
+  -o-transition: .2s;
 }
-.menu_overlay.show{
-  opacity: .5;
-  visibility: visible;
+.overlay.show,.modal.show{
+  opacity: 1;
+  visibility: visible;  
 }
-.mobile-menu a.logo {
-  display: block;
-  max-width: 150px;
-  margin-bottom: 50px;
-}
-
-
-
-.mobile-menu ul#pills-tab {
-  margin-top: 90px;
-  margin-bottom: 35px !important;
-  display: block;
-}
-.mobile-menu  nav ul li {
-  list-style: none;
-  display: block;
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: #0a0a0a;
 }
 
-.mobile-menu nav ul li a {
-  color: #272835;
-  font-size: 16px;
-  line-height: 40px;
-  transition: .3s;
-}
 
-.mobile-menu nav ul li a:hover { 
-  color: #ff4900;
-}
-  
- 
-.mobile-menu a.bars {
-  position: absolute;
-  right: 20px;
-  top: 15px;
-  width: 40px;
-  height: 40px;
-  background: #ff4900;
-  text-align: center;
-  line-height: 40px;
-  border-radius: 50%;
-  font-size: 22px;
+.modalHeader h3 {
+  margin: 0;
   color: #fff;
-  box-shadow: 0px 0px 17px -2px #0000004a;
+  font-size: 18px;
+}
+
+.modalHeader button.closeModal {
+  display: block;
+  max-width: 20px;
+  filter: invert(1);
+}
+
+.messagelists {
+  height: 400px;
+  overflow: auto;
+  padding: 30px;
+  width: 100%;
+}
+
+.message {
+  display: flex;
+  padding: 10px;
+  background: #0a0a0a;
+  border-radius: 10px;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.message img {
+  width: 30px;
+  height: 30px;
+  display: block;
+  border-radius: 50%;
+}
+.resp {
+  color: #ffffff;
+}
+
+.message.min-msg .resp {
+  color: #adadad;
+}
+.message.min-msg .resp p {
+  margin: 0;
+}
+.modal_chatBody .chatInput {
+  margin: auto;
+  display: block;
+  width: calc(100% - 60px);
+  height: 46px;
 }
 
 
 
 
-/* Header-area END && Hero-area START */
 
 
 
 
 
 
+/* Big screen :1200px. */
+@media (min-width: 1200px) and (max-width: 1500px) {
 
 
+}
 
 
+/* Normal screen :992px. */
+@media (min-width: 992px) and (max-width: 1200px) {
 
 
+}
+
+ 
+/* Tablet screen :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+
+
+}
+
+ 
+/* small screen :320px. */
+@media (max-width: 767px) {
+
+ 
+}
+ 
+/* Large Mobile screen :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+.container {width:450px}
+ 
+}
