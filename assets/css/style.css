@@ -198,7 +198,7 @@ textarea::-webkit-scrollbar {
 .chatInput button {
   position: absolute;
   top: 50%;
-  right: 5px; 
+  right: 10px;
   max-width: 40px;
   border-radius: 4px;
   /* padding: 5px; */
