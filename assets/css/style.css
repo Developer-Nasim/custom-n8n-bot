@@ -201,7 +201,7 @@ textarea::-webkit-scrollbar {
   right: 5px; 
   max-width: 40px;
   border-radius: 4px;
-  padding: 5px;
+  /* padding: 5px; */
   transform: translateY(-50%);
 }
 .chatBody { 
